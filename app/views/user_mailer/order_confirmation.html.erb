@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order </h1>
+    <p>
+      You have successfully placed an order.<br>
+    </p>
+  <% @order.line_items.each do |item|%>
+    <h4>
+      Name: <%=item.product.name%>
+    </h4>
+    <p>Quantity: <%= item.product.quantity %></p>
+    <p>
+      Description: <%= item.product.description %>
+    </p>
+    <p>
+      Product price: $<%= item.product.price %>
+    </p>
+    <%end%>
+    <p>
+      To preview order follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

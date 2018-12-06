@@ -1,0 +1,16 @@
+
+Thank you for your order 
+===============================================
+
+You have successfully placed an order.
+
+<% @order.line_items.each do |item|%>
+Item Name: <%=item.product.name%>
+Quantity: <%= item.product.quantity %>
+Description: <%= item.product.description %>
+Product price $<%= item.product.price %>
+<%end%>
+
+To preview order follow this link: <%= @url %>.
+
+Thanks for joining and have a great day!
