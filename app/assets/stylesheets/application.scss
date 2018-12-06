@@ -4,6 +4,7 @@
 @import "font-awesome";
 
 // App
+@import "normalize";
 @import "products";
 
 // Global
@@ -11,9 +12,22 @@ body {
   padding-top: 70px;
 }
 
+.navbar-nav > li > * {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #777;
+}
+
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
 .row {
