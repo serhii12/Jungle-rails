@@ -1,0 +1,24 @@
+<div class="rating">
+<% @product.review.each do |review|%>
+	<div class="review-cart">
+		<div class="review-top">
+  		<div class="review-info">
+			<% if current_user && current_user.id == review.user.id  %>
+				<span>
+          hELLO
+        </span>
+      <% end %>
+				<h4>
+          Product Rating: <%=review.rating%> out of 5
+        </h4>
+        <h5>
+          Create by <%= review.user.first_name %>
+        </h5>
+				<h5>
+          <%=review.description %>
+        </h5>
+			</div>
+		</div>
+	</div>
+<%end%>
+</div>

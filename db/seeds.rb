@@ -133,4 +133,20 @@ cat3.products.create!(
   price: 2_483.75
 )
 
-puts 'DONE!'
+User.create!(
+  first_name: 'Alex',
+  last_name: 'Brown',
+  email: 'alex.brown@gmail.com',
+  password_digest: BCrypt::Password.create('123456')
+)
+
+30.times do
+  Review.create!(
+    product_id: rand(1..12),
+    user_id: 1,
+    description: Faker::Hacker.say_something_smart,
+    rating: rand(1..5)
+  )
+end
+
+puts 'DONE! with DataBase'

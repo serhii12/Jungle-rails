@@ -8,6 +8,8 @@
 /log/*
 !/log/.keep
 /tmp
+/.idea
+.idea
 
 # Ignore carrier wave uploads for development
 /public/uploads
