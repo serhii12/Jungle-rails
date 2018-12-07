@@ -1,7 +1,11 @@
 <div class="reviews">
-  <%= form_for :reviews, :html => {:class => "form"} do |f| %>
+  <%= form_for :reviews,url: product_reviews_path(@product, :review), :html => {:class => "form"} do |f| %>
+    <%=f.hidden_field :product_id, :value => @product.id%>
+    <%=f.hidden_field :user_id, :value => current_user.id%>
+    
     <h2>Leave a Review:</h2>
-    <textarea autofocus maxlength="500"  placeholder="Write your review here" rows="7" cols="70"></textarea>
+    <%= f.text_area :description, cols: 70, rows: 7,placeholder: "Write your review here", autofocus: true %>
+    <%= f.select( :rating,['1','2','3','4','5'], {} ,class: "selectTime") %>
     <button type="submit" class="btn-review">Submit Review</button>
   <%end%>
 </div>

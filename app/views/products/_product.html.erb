@@ -8,6 +8,10 @@
   <p class="description">
     <%= product.description %>
   </p>
+  <p>
+    <strong>
+    Average rating: <%= product.reviews.average(:rating) ? product.reviews.average(:rating).round : "0"%>/5
+    </strong></p>
   <footer class="actions">
     <% if product.quantity.zero?  %>
         <span>SOLD OUT</span>

@@ -1,18 +1,18 @@
 <div class="rating">
-<% @product.review.each do |review|%>
+<% @product.reviews.order(created_at: :desc).each do |review|%>
 	<div class="review-cart">
 		<div class="review-top">
   		<div class="review-info">
 			<% if current_user && current_user.id == review.user.id  %>
 				<span>
-          hELLO
+          <%= link_to fa_icon('trash'), product_review_path(@product, id:review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
         </span>
       <% end %>
 				<h4>
           Product Rating: <%=review.rating%> out of 5
         </h4>
         <h5>
-          Create by <%= review.user.first_name %>
+          Created by <%= review.user.first_name %>
         </h5>
 				<h5>
           <%=review.description %>

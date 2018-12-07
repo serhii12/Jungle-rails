@@ -19,6 +19,12 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd>$ <%= @product.price %></dd>
+          <dt>
+            Average rating: 
+          </dt>
+          <dd> 
+            <%= @product.reviews.average(:rating) ? @product.reviews.average(:rating).round : "0"%>/5
+          </dd>
         </dl>
       </div>
     </div>
