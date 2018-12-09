@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  def new
-    @user = User.new
-  end
+  def new; end
 
   def create
     if @user = User.authenticate_with_credentials(params[:email], params[:password])
