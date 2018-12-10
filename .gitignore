@@ -10,6 +10,7 @@
 /tmp
 /.idea
 .idea
+/node_modules
 
 # Ignore carrier wave uploads for development
 /public/uploads
